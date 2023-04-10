@@ -1,4 +1,3 @@
-// index.js
 const fs = require("fs");
 
 function calculateHouseEdge(betType, totalNumbers) {
@@ -24,6 +23,16 @@ function getHouseEdgeStats(houseEdge) {
     };
 }
 
+function getUniquePayoutMultiples(betTypes) {
+    const payoutMultiples = new Set();
+
+    Object.values(betTypes).forEach((betType) => {
+        payoutMultiples.add(betType.payout_multiplier);
+    });
+
+    return payoutMultiples;
+}
+
 fs.readFile("bet-types.json", "utf8", (err, data) => {
     if (err) {
         console.error("Error reading the JSON file:", err);
@@ -40,4 +49,5 @@ fs.readFile("bet-types.json", "utf8", (err, data) => {
 
     console.log(houseEdge);
     console.log(getHouseEdgeStats(houseEdge));
+    console.log("Unique payout multiples:", getUniquePayoutMultiples(betTypes));
 });

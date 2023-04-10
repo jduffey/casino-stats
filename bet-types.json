@@ -1325,5 +1325,22 @@
             37
         ],
         "payout_multiplier": 6
+    },
+    "snake": {
+        "winning_numbers": [
+            1,
+            5,
+            9,
+            12,
+            14,
+            16,
+            19,
+            23,
+            27,
+            30,
+            32,
+            34
+        ],
+        "payout_multiplier": 2
     }
 }
